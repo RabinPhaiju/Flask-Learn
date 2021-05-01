@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Edit {% endblock title %}
+{% block body %}
+<div class="container">
+    <div class="forms container">
+        <h2>Edit Todos</h2>
+        <form action="/todo_edit/{{todo.sno}}" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name='title' value={{todo.title}} id="title"
+                    placeholder="todo title">
+            </div>
+            <div class="form-group">
+                <label for="desc">Job Description</label>
+                <textarea class="form-control" name='desc' id="desc" rows="3">{{todo.desc}}</textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Submit">
+                <a href="/todos" class="btn btn-info">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}

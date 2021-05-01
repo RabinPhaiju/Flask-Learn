@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %} Todos {% endblock title %}
+{% block body %}
+
+<div class="container">
+    <div class="forms container">
+        <h2>Add a Todos</h2>
+        <form action="todos" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" name='title' id="title" placeholder="todo title">
+            </div>
+            <div class="form-group">
+                <label for="desc">Job Description</label>
+                <textarea class="form-control" name='desc' id="desc" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Submit">
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="table container">
+        <h2>Your Todos</h2>
+        {% if allTodo|length==0 %}
+        <div class="alert alert-dark" role="alert">
+            No records
+        </div>
+        {% else %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">SN</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                {% for i in allTodo%}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{i.title}}</td>
+                    <td>{{i.desc}}</td>
+                    <td>{{i.date_created}}</td>
+                    <td><a href='/todo_delete/{{i.sno}}' class="btn btn-danger btn-sm"
+                            onclick="return confirm('Are you sure, you want to delete it?')">Delete</a>
+                        <a href='/todo_edit/{{i.sno}}' class="btn btn-warning btn-sm">Edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock body %}
