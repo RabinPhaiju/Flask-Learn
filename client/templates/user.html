@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %} {{user.firstname}} {% endblock title %}
+{% block body %}
+<div class="container mx-5">
+    <div class="container" align='center'>
+        <h3>Firstname : {{user.firstname}}</h3>
+        <h3>Lastname : {{user.lastname}}</h3>
+        <h3>Email : {{user.email}}</h3>
+    </div>
+</div>
+{% endblock body %}
