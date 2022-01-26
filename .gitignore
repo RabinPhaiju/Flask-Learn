@@ -1,2 +1,3 @@
 .vscode/
 flask_venv/
+client/__pycache__/
