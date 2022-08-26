@@ -3,3 +3,5 @@ flask_venv/
 venv/
 client/__pycache__/
 Flask&SQLAlchemy/db.sqlite
+Flask&SQLAlchemy/__pycache__/
+Flask&SQLAlchemy/Pipfile.lock
