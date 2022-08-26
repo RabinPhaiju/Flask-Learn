@@ -2,3 +2,4 @@
 flask_venv/
 venv/
 client/__pycache__/
+Flask&SQLAlchemy/db.sqlite
