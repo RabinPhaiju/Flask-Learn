@@ -1,0 +1,26 @@
+GET http://127.0.0.1:5000/product
+
+###
+POST http://127.0.0.1:5000/product
+content-type: application/json
+
+{
+    "name": "product1",
+    "description": "product 1 description",
+    "price":"100",
+    "qty":1,
+    "category_id":1
+}
+
+
+###
+GET http://127.0.0.1:5000/category
+
+###
+POST http://127.0.0.1:5000/category
+content-type: application/json
+
+{
+    "name": "category1",
+    "code": "111"
+}
