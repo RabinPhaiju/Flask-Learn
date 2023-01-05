@@ -109,7 +109,7 @@ def webhook():
         email = payment_intent.receipt_email
 
         user = User.query.filter_by(email= email).first()
-        user.amount = amount
+        user.amount = user.amount + amount
         db.session.commit()
 
         print(f'user {email} has paid {amount} with client {client_secret}')
